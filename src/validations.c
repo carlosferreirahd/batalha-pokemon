@@ -1,5 +1,11 @@
+#include <string.h>
 #include <stdbool.h>
 #include "../include/validations.h"
+
+bool is_valid_name(char *name)
+{
+  return strchr(name, ',') == NULL;
+}
 
 bool is_valid_type(char *type)
 {
@@ -32,6 +38,9 @@ bool is_valid_id(pokemon *pokemon_list, int id)
 
 bool is_valid_pokemon(pokemon p)
 {
+  if (!is_valid_name(p.name))
+    return false;
+
   if (!is_valid_type(p.type))
     return false;
 
