@@ -2,6 +2,10 @@
 #include <stdbool.h>
 #include "../include/validations.h"
 
+const char *valid_types[] = {"fire", "grass", "water", "electric", "ground"};
+
+const int num_types = sizeof(valid_types) / sizeof(valid_types[0]);
+
 bool is_valid_name(char *name)
 {
   return strchr(name, ',') == NULL;

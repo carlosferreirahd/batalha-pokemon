@@ -1,7 +1,6 @@
 #ifndef VALIDATIONS_H
 #define VALIDATIONS_H
 
-#include <stdbool.h>
 #include "pokemon.h"
 
 bool is_valid_name(char *name);
