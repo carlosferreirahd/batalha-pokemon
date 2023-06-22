@@ -1,5 +1,7 @@
 #include <string.h>
 #include <stdbool.h>
+#include <stdlib.h>
+#include <time.h>
 #include "../include/validations.h"
 
 const char *valid_types[] = {"fire", "grass", "water", "electric", "ground"};
@@ -27,10 +29,8 @@ bool is_valid_stat(int stat)
   return stat > 0;
 }
 
-bool is_valid_id(pokemon *pokemon_list, int id)
+bool is_valid_id(pokemon *pokemon_list, int list_size, int id)
 {
-  const int list_size = sizeof(pokemon_list) / sizeof(pokemon_list[0]);
-
   for (int i = 0; i < list_size; i++)
   {
     if (pokemon_list[i].id == id)
@@ -38,6 +38,22 @@ bool is_valid_id(pokemon *pokemon_list, int id)
   }
 
   return true;
+}
+
+int generate_valid_id(pokemon *pokemon_list, int list_size)
+{
+  int random_id = 1;
+  int min = 1;
+  int max = 99;
+
+  srand(time(NULL));
+
+  while (!is_valid_id(pokemon_list, list_size, random_id))
+  {
+    random_id = min + rand() % (max - min + 1);
+  }
+
+  return random_id;
 }
 
 bool is_valid_pokemon(pokemon p)
