@@ -1,5 +1,10 @@
 {
   "files.associations": {
-    "pokemon.h": "c"
-  }
+    "pokemon.h": "c",
+    "validations.h": "c",
+    "storage.h": "c",
+    "random": "c",
+    "limits": "c",
+    "algorithm": "c"
+  },
 }
