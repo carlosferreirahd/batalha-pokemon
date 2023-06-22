@@ -37,3 +37,14 @@ void show_all_stats(pokemon p)
   printf("special defense: %d\n", p.m_def);
   printf("special points: %d\n", p.sp);
 }
+
+int find_pokemon_by_id(pokemon *pokemon_list, int list_size, int id)
+{
+  for (int i = 0; i < list_size; i++)
+  {
+    if (pokemon_list[i].id == id)
+      return i;
+  }
+
+  return -1;
+}

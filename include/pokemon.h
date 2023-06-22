@@ -20,4 +20,6 @@ void show_simple_stats(pokemon p);
 
 void show_all_stats(pokemon p);
 
+int find_pokemon_by_id(pokemon *pokemon_list, int list_size, int id);
+
 #endif
