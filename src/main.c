@@ -49,15 +49,15 @@ void show_detailed_list()
 bool insert_new_pokemon()
 {
   int id, hp, atk, def, m_atk, m_def, sp;
-  char name[64], type[16];
+  char type, name[64];
 
   id = generate_valid_id(all_pokemon, all_pokemon_size);
 
   printf("name: ");
   scanf("%s", name);
 
-  printf("type: ");
-  scanf("%s", type);
+  printf("type (A, F, T, P or E): ");
+  scanf(" %c", &type);
 
   printf("hp: ");
   scanf("%d", &hp);
@@ -151,7 +151,10 @@ void handle_option(int opt)
       printf("this pokemon id was not found, try again\n");
     }
     break;
+  case 0:
+    break;
   default:
+    printf("invalid option\n");
     break;
   }
 }

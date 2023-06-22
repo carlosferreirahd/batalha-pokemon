@@ -4,7 +4,13 @@
 #include <time.h>
 #include "../include/validations.h"
 
-const char *valid_types[] = {"fire", "grass", "water", "electric", "ground"};
+// A -> AGUA
+// F -> FOGO
+// T -> TERRA
+// P -> PLANTA
+// E -> ELETRICO
+
+const char valid_types[] = {'A', 'F', 'T', 'P', 'E'};
 
 const int num_types = sizeof(valid_types) / sizeof(valid_types[0]);
 
@@ -13,11 +19,11 @@ bool is_valid_name(char *name)
   return strchr(name, ',') == NULL;
 }
 
-bool is_valid_type(char *type)
+bool is_valid_type(char type)
 {
   for (int i = 0; i < num_types; i++)
   {
-    if (strcmp(type, valid_types[i]) == 0)
+    if (valid_types[i] == type)
       return true;
   }
 

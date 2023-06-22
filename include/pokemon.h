@@ -5,7 +5,7 @@ typedef struct pokemon_struct
 {
   int id;
   char name[64];
-  char type[16];
+  char type;
   int hp;
   int atk;
   int def;
@@ -14,7 +14,7 @@ typedef struct pokemon_struct
   int sp;
 } pokemon;
 
-pokemon create_pokemon(int id, char *name, char *type, int hp, int atk, int def, int m_atk, int m_def, int sp);
+pokemon create_pokemon(int id, char *name, char type, int hp, int atk, int def, int m_atk, int m_def, int sp);
 
 void show_simple_stats(pokemon p);
 

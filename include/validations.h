@@ -5,7 +5,7 @@
 
 bool is_valid_name(char *name);
 
-bool is_valid_type(char *type);
+bool is_valid_type(char type);
 
 bool is_valid_stat(int stat);
 
