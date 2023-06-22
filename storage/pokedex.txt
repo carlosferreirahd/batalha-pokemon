@@ -1,4 +1,1 @@
-3
-1,findolina,fire,12,12,12,12,12,12
-11,fireber,grass,12,12,12,12,12,12
-56,dostener,water,44,4,4,4,4,44
+0

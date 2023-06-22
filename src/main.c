@@ -93,6 +93,28 @@ bool insert_new_pokemon()
   return true;
 }
 
+bool remove_pokemon()
+{
+  int id;
+
+  printf("id to be removed: ");
+  scanf("%d", &id);
+
+  int id_pos = find_pokemon_by_id(all_pokemon, all_pokemon_size, id);
+
+  if (id_pos == -1)
+    return false;
+
+  // swaping last pokemon with the one to be removed
+  all_pokemon[id_pos] = all_pokemon[all_pokemon_size - 1];
+
+  // now removing last position
+  all_pokemon = (pokemon *)realloc(all_pokemon, (all_pokemon_size - 1) * sizeof(pokemon));
+  all_pokemon_size--;
+
+  return true;
+}
+
 void handle_option(int opt)
 {
   switch (opt)
@@ -114,6 +136,19 @@ void handle_option(int opt)
     else
     {
       printf("error while inserting, please try again\n");
+    }
+    break;
+  case 4:
+    bool remove_success = remove_pokemon();
+
+    if (remove_success)
+    {
+      printf("pokemon removed!\n");
+      save_list_to_file(all_pokemon, all_pokemon_size);
+    }
+    else
+    {
+      printf("this pokemon id was not found, try again\n");
     }
     break;
   default:
