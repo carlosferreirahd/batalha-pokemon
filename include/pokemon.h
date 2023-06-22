@@ -16,4 +16,8 @@ typedef struct pokemon_struct
 
 pokemon create_pokemon(int id, char *name, char *type, int hp, int atk, int def, int m_atk, int m_def, int sp);
 
+void show_simple_stats(pokemon p);
+
+void show_all_stats(pokemon p);
+
 #endif
